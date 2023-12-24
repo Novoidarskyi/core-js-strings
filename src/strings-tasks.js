@@ -19,8 +19,8 @@
  *   getStringLength(null) => 0
  *   getStringLength(undefined) => 0
  */
-function getStringLength(/* value */) {
-  throw new Error('Not implemented');
+function getStringLength(value) {
+  return typeof value === 'string' ? value.length : 0;
 }
 
 /**
@@ -37,8 +37,13 @@ function getStringLength(/* value */) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(value) {
+  return (
+    typeof value === 'string' ||
+    (typeof value === 'object' &&
+      value !== null &&
+      typeof value.valueOf() === 'string')
+  );
 }
 
 /**
@@ -53,8 +58,9 @@ function isString(/* value */) {
  *   concatenateStrings('aa', '') => 'aa'.
  *   concatenateStrings('', 'bb') => 'bb'
  */
-function concatenateStrings(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function concatenateStrings(value1, value2) {
+  const result = value1.concat(value2);
+  return result;
 }
 
 /**
