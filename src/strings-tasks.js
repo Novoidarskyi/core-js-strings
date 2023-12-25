@@ -59,8 +59,7 @@ function isString(value) {
  *   concatenateStrings('', 'bb') => 'bb'
  */
 function concatenateStrings(value1, value2) {
-  const result = value1.concat(value2);
-  return result;
+  return value1.concat(value2);
 }
 
 /**
@@ -74,8 +73,8 @@ function concatenateStrings(value1, value2) {
  *   getFirstChar('cat') => 'c'
  *   getFirstChar('') => ''
  */
-function getFirstChar(/* value */) {
-  throw new Error('Not implemented');
+function getFirstChar(value) {
+  return value ? value.charAt(0) : '';
 }
 
 /**
